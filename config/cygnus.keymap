@@ -88,9 +88,9 @@
             layers = <0>;
         };
 
-        enter {
-            bindings = <&kp ENTER>;
-            key-positions = <31 32>;
+        quotes {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <18 19>;
             layers = <0>;
         };
     };
@@ -98,31 +98,31 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        base {
             display-name = "Base";
             bindings = <
-&kp Q             &kp W        &kp E     &kp R  &kp T          &kp Y      &kp U  &kp I      &kp O    &kp P
-&mt LEFT_SHIFT A  &mt RCTRL S  &kp D     &kp F  &kp G          &kp H      &kp J  &kp K      &kp L    &kp SEMI
-&kp Z             &kp X        &kp C     &kp V  &kp B          &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
-                               &kp LGUI  &mo 1  &kp BACKSPACE  &kp SPACE  &mo 2  &kp LALT
+&kp Q             &kp W        &kp E     &kp R        &kp T          &kp Y      &kp U  &kp I      &kp O    &kp P
+&mt LEFT_SHIFT A  &mt RCTRL S  &kp D     &kp F        &kp G          &kp H      &kp J  &kp K      &kp L    &kp SEMI
+&kp Z             &kp X        &kp C     &kp V        &kp B          &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
+                               &kp LGUI  &lt 1 ENTER  &kp BACKSPACE  &kp SPACE  &mo 2  &kp LALT
             >;
         };
 
         upper {
             bindings = <
-&kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans
+&kp N1   &kp N2  &kp N3  &kp N4  &kp N5  &kp N6    &kp N7    &kp N8     &kp N9  &kp N0
+&kp TAB  &trans  &trans  &trans  &trans  &trans    &kp UP    &trans     &trans  &trans
+&trans   &trans  &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+                 &trans  &trans  &trans  &trans    &trans    &kp DEL
             >;
         };
 
         lower {
             bindings = <
-&kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)  &kp LS(LPAR)  &kp LS(RPAR)
-&trans        &trans      &trans         &trans        &trans         &trans         &trans        &trans        &trans        &trans
-&trans        &trans      &trans         &trans        &trans         &trans         &trans        &trans        &trans        &to 3
-                          &trans         &trans        &trans         &trans         &trans        &trans
+&kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT  &kp CARET  &kp AMPS   &kp STAR  &trans     &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR   &kp MINUS  &kp EQUAL  &kp BSLH  &kp GRAVE  &trans
+&trans        &trans        &trans        &trans        &trans       &kp UNDER  &kp PLUS   &kp PIPE  &kp TILDE  &to 3
+                            &trans        &trans        &trans       &trans     &trans     &trans
             >;
         };
 
