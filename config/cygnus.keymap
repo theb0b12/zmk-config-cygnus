@@ -41,6 +41,17 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
+
+        sh: sticky_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SH";
+            bindings = <&mo>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+        };
     };
 
     combos {
@@ -101,10 +112,10 @@
         base {
             display-name = "Base";
             bindings = <
-&kp Q  &kp W         &kp E  &kp R        &kp T          &kp Y      &kp U           &kp I           &kp O         &kp P
-&kp A  &hml LCTRL S  &kp D  &kp F        &kp G          &kp H      &kp J           &kp K           &hmr RCTRL L  &kp SEMICOLON
-&kp Z  &kp X         &kp C  &kp V        &kp B          &kp N      &kp M           &kp COMMA       &kp DOT       &kp SLASH
-                     &mo 3  &lt 2 ENTER  &kp BACKSPACE  &kp SPACE  &kp LEFT_SHIFT  &lt 6 LEFT_GUI
+&kp Q  &kp W         &kp E         &kp R        &kp T          &kp Y      &kp U           &kp I      &kp O         &kp P
+&kp A  &hml LCTRL S  &kp D         &kp F        &kp G          &kp H      &kp J           &kp K      &hmr RCTRL L  &kp SEMICOLON
+&kp Z  &kp X         &kp C         &kp V        &kp B          &kp N      &kp M           &kp COMMA  &kp DOT       &kp SLASH
+                     &kp LEFT_GUI  &lt 2 ENTER  &kp BACKSPACE  &kp SPACE  &kp LEFT_SHIFT  &sh 6 3
             >;
         };
 
