@@ -111,6 +111,12 @@
             key-positions = <18 19>;
             layers = <0>;
         };
+
+        gui {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <3 2 17 18>;
+            layers = <0>;
+        };
     };
 
     keymap {
