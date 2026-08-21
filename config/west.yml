@@ -18,5 +18,7 @@ manifest:
     - name: zmk-raw-hid
       remote: zzeneg
       revision: main
+    - name: hid-handler
+      path: hid_handler
   self:
     path: config
