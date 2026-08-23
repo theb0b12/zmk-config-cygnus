@@ -112,12 +112,6 @@
             layers = <0>;
         };
 
-        gui {
-            bindings = <&kp LEFT_GUI>;
-            key-positions = <3 2 17 18>;
-            layers = <0>;
-        };
-
         escape-work {
             bindings = <&to 0>;
             key-positions = <28 29>;
@@ -171,7 +165,7 @@
             bindings = <
 &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT  &kp CARET  &kp AMPS   &kp STAR  &trans     &trans
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR   &kp MINUS  &kp EQUAL  &kp BSLH  &kp GRAVE  &trans
-&trans        &trans        &trans        &tog 2        &tog 1       &kp UNDER  &kp PLUS   &kp PIPE  &kp TILDE  &to 5
+&trans        &trans        &trans        &tog 2        &tog 1       &kp UNDER  &kp PLUS   &kp PIPE  &kp TILDE  &sl 5
                             &trans        &trans        &trans       &trans     &trans     &trans
             >;
         };
@@ -180,7 +174,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans       &trans       &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &bootloader  &bootloader  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans       &trans       &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans       &trans       &trans  &trans  &trans  &to 0
                 &trans  &trans  &trans       &trans       &trans  &trans
             >;
         };
@@ -204,4 +198,3 @@
         };
     };
 };
-
