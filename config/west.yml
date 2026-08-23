@@ -13,5 +13,5 @@ manifest:
     - name: zmk-helpers
       remote: urob
       revision: v0.3
-asdf  self:
+  self:
     path: config
