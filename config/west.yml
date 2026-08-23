@@ -6,8 +6,6 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
-    - name: zzeneg
-      url-base: https://github.com/zzeneg
   projects:
     - name: zmk
       remote: urob
@@ -15,10 +13,5 @@ manifest:
     - name: zmk-helpers
       remote: urob
       revision: v0.3
-    - name: zmk-raw-hid
-      remote: zzeneg
-      revision: main
-    - name: hid-handler
-      path: hid_handler
-  self:
+asdf  self:
     path: config

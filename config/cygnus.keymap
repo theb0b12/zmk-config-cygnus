@@ -111,6 +111,12 @@
             key-positions = <18 19>;
             layers = <0>;
         };
+
+        escape-work {
+            bindings = <&to 0>;
+            key-positions = <28 29>;
+            layers = <2>;
+        };
     };
 
     keymap {
@@ -122,7 +128,7 @@
 &kp Q  &kp W         &kp E         &kp R        &kp T          &kp Y      &kp U           &kp I      &kp O         &kp P
 &kp A  &hml LCTRL S  &kp D         &kp F        &kp G          &kp H      &kp J           &kp K      &hmr RCTRL L  &kp SEMICOLON
 &kp Z  &kp X         &kp C         &kp V        &kp B          &kp N      &kp M           &kp COMMA  &kp DOT       &kp SLASH
-                     &kp LEFT_GUI  &lt 2 ENTER  &kp BACKSPACE  &kp SPACE  &kp LEFT_SHIFT  &sh 6 3
+                     &kp LEFT_GUI  &lt 3 ENTER  &kp BACKSPACE  &kp SPACE  &kp LEFT_SHIFT  &sh 7 4
             >;
         };
 
@@ -132,7 +138,17 @@
 &kp TAB         &kp Q  &kp W  &kp E         &kp R      &trans     &trans  &trans  &trans  &trans
 &kp LEFT_SHIFT  &kp A  &kp S  &kp D         &kp G      &trans     &trans  &trans  &trans  &trans
 &kp LCTRL       &kp Z  &kp X  &kp C         &kp V      &to 0      &trans  &trans  &trans  &trans
-                       &mo 2  &kp LEFT_ALT  &kp SPACE  &kp ENTER  &trans  &trans
+                       &mo 3  &kp LEFT_ALT  &kp SPACE  &kp ENTER  &trans  &trans
+            >;
+        };
+
+        work {
+            display-name = "Work";
+            bindings = <
+&kp Q              &kp W         &kp E         &kp R        &kp T          &kp Y      &kp U           &kp I      &kp O         &kp P
+&hml LEFT_SHIFT A  &hml LCTRL S  &kp D         &kp F        &kp G          &kp H      &kp J           &kp K      &hmr RCTRL L  &kp SEMICOLON
+&kp Z              &kp X         &kp C         &kp V        &kp B          &kp N      &kp M           &kp COMMA  &kp DOT       &kp SLASH
+                                 &kp LEFT_ALT  &lt 3 ENTER  &kp BACKSPACE  &kp SPACE  &kp LEFT_SHIFT  &sh 7 4
             >;
         };
 
@@ -140,7 +156,7 @@
             bindings = <
 &kp N1   &kp N2  &kp N3  &kp N4        &kp N5  &kp N6      &kp N7    &kp N8    &kp N9     &kp N0
 &kp TAB  &trans  &trans  &kp LEFT_ALT  &trans  &trans      &trans    &kp UP    &trans     &trans
-&trans   &trans  &trans  &trans        &sl 5   &trans      &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+&trans   &trans  &trans  &trans        &sl 6   &trans      &kp LEFT  &kp DOWN  &kp RIGHT  &trans
                  &trans  &trans        &trans  &kp DELETE  &trans    &trans
             >;
         };
@@ -149,7 +165,7 @@
             bindings = <
 &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT  &kp CARET  &kp AMPS   &kp STAR  &trans     &trans
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR   &kp MINUS  &kp EQUAL  &kp BSLH  &kp GRAVE  &trans
-&trans        &trans        &trans        &trans        &tog 1       &kp UNDER  &kp PLUS   &kp PIPE  &kp TILDE  &to 4
+&trans        &trans        &trans        &tog 2        &tog 1       &kp UNDER  &kp PLUS   &kp PIPE  &kp TILDE  &to 5
                             &trans        &trans        &trans       &trans     &trans     &trans
             >;
         };
