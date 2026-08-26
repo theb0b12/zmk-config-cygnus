@@ -120,7 +120,7 @@
 
         alt {
             bindings = <&kp LALT>;
-            key-positions = <12 13>;
+            key-positions = <10 11>;
             layers = <0 2>;
         };
     };
