@@ -117,6 +117,12 @@
             key-positions = <28 29>;
             layers = <2>;
         };
+
+        alt {
+            bindings = <&kp LALT>;
+            key-positions = <12 13>;
+            layers = <0 2>;
+        };
     };
 
     keymap {
