@@ -120,6 +120,12 @@
 
         alt {
             bindings = <&kp LALT>;
+            key-positions = <21 20>;
+            layers = <0 2>;
+        };
+
+        shift {
+            bindings = <&kp LSHFT>;
             key-positions = <10 11>;
             layers = <0 2>;
         };
