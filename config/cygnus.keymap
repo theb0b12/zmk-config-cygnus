@@ -114,7 +114,13 @@
 
         gui {
             bindings = <&kp LEFT_GUI>;
-            key-positions = <3 2 17 18>;
+            key-positions = <8 7 6>;
+            layers = <0>;
+        };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <16 17 18>;
             layers = <0>;
         };
     };
@@ -188,4 +194,3 @@
         };
     };
 };
-
