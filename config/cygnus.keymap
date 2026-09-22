@@ -1,0 +1,180 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/key-labels/36.h"
+
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // Left-hand keys.
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // Right-hand keys.
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2 // thumb keys
+
+/ {
+    behaviors {
+        /* Left-hand HRMs. */
+
+        hml: hml {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+
+        /* Right-hand HRMs. */
+
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+
+        sh: sticky_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SH";
+            bindings = <&mo>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+        };
+
+        dtd_ba: double_tap_dance_backspace {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DTD";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DEL>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        par1 {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <3 2>;
+            layers = <0>;
+        };
+
+        par2 {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <6 7>;
+            layers = <0>;
+        };
+
+        cur1 {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <23 22>;
+            layers = <0>;
+        };
+
+        cur2 {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <26 27>;
+            layers = <0>;
+        };
+
+        bracket1 {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <13 12>;
+            layers = <0>;
+        };
+
+        bracket2 {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <16 17>;
+            layers = <0>;
+        };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <1 0>;
+            layers = <0>;
+        };
+
+        quotes {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <18 19>;
+            layers = <0>;
+        };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <16 17 18>;
+            layers = <0>;
+        };
+
+        lower {
+            bindings = <&mo 1>;
+            key-positions = <26 27 28>;
+            layers = <0>;
+        };
+
+        shift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <11 13 12>;
+            layers = <0>;
+        };
+
+        alt {
+            bindings = <&kp LALT>;
+            key-positions = <21 22 23>;
+            layers = <0>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        base {
+            display-name = "Base";
+            bindings = <
+&kp Q  &kp W         &kp E         &kp R        &kp T          &kp Y      &kp U           &kp I      &kp O         &kp P
+&kp A  &hml LCTRL S  &kp D         &kp F        &kp G          &kp H      &kp J           &kp K      &hmr RCTRL L  &kp SEMICOLON
+&kp Z  &kp X         &kp C         &kp V        &kp B          &kp N      &kp M           &kp COMMA  &kp DOT       &kp SLASH
+                     &kp LEFT_GUI  &lt 1 ENTER  &kp BACKSPACE  &kp SPACE  &kp LEFT_SHIFT  &sh 3 2
+            >;
+        };
+
+        lower {
+            bindings = <
+&kp N1   &kp N2  &kp N3  &kp N4        &kp N5  &kp N6      &kp N7    &kp N8    &kp N9     &kp N0
+&kp TAB  &trans  &trans  &kp LEFT_ALT  &trans  &trans      &trans    &kp UP    &trans     &trans
+&trans   &trans  &trans  &trans        &trans  &trans      &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+                 &trans  &trans        &trans  &kp DELETE  &trans    &trans
+            >;
+        };
+
+        upper {
+            bindings = <
+&kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT  &kp CARET  &kp AMPS   &kp STAR  &trans     &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR   &kp MINUS  &kp EQUAL  &kp BSLH  &kp GRAVE  &trans
+&trans        &trans        &trans        &trans        &trans       &kp UNDER  &kp PLUS   &kp PIPE  &kp TILDE  &trans
+                            &trans        &trans        &trans       &trans     &trans     &trans
+            >;
+        };
+
+        fn-nav-bootloader {
+            bindings = <
+&kp F1   &kp F2   &kp F3  &kp F4  &kp F5       &kp F6       &kp F7    &kp F8    &kp F9     &kp F10
+&kp F11  &kp F12  &trans  &trans  &bootloader  &bootloader  &trans    &kp UP    &trans     &trans
+&trans   &trans   &trans  &trans  &to 0        &trans       &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+                  &trans  &trans  &trans       &trans       &trans    &trans
+            >;
+        };
+    };
+};
